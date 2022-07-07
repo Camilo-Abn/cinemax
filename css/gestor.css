@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,600;1,700&display=swap');
+
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Rubik', sans-serif; /*tipo de fuente ortografica sacado de google fonts*/
+}
+
+body{
+    background: rgb(223, 221, 221);/*color fondo de la pagina*/
+}
+
+.container-all{
+    width: 100%;
+    max-width: 1000px; /*Ancho del recuadro blanco */
+    margin: auto;
+    padding: 60px; /*margen del recuadro donde viene la imagen y los parrafos , etc..*/
+    background: white; /*color de fondo del recuadro */
+    margin-top: 80px; /*margen lado arriba de la pagina*/
+    border-top: 5px solid rgb(129, 67, 67); /*Lado del borde: arriba del recuadro + Tamaño del borde + tipo de borde: solid + color*/
+}
+
+.title{
+    
+    font-size: 28px;/*tamaño del titulo*/
+    margin-bottom: 10px; /*margen abajo del titulo*/
+}
+
+.sub-title{
+ font-size: 30px;/*tamaño del subtitulo, el subtitulo:Jurasic Park*/
+ margin-top: 25px;/*margen arriba del subtitulo*/
+ margin-bottom: 20px;/*margen abajo del subtitulo*/
+}
+
+.container-all img{
+    
+    width: 250px; /*el width = ancho cambia el ancho de la imagen */
+    float: left; /* el float: left se uso para que la imagen este a la izquierda y los parrados a la derecha*/
+    margin-right: 35px; /* margen lado derecho de la imagen*/
+    margin-bottom: 60px;/* margen lado de abajo de la imagen*/
+    margin-top: 60px; /*margen lado de arriba de la imagen*/
+}
+
+.container-all p{
+    font-size: 18 px;
+    font-weight: 300;
+}
+
+.container-all hr{
+    margin-top: 25px;
+    margin-bottom: 20px;
+    
+}
+
+.Pelicula{
+    margin-bottom: 50px;
+}
+
+.salir {
+  background-color: #d32323;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}

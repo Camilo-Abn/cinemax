@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,600;1,700&display=swap');
+
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Rubik', sans-serif; /*tipo de fuente ortografica sacado de google fonts*/
+}
+
+body{
+    background: rgb(223, 221, 221);/*color fondo de la pagina*/
+}
+
+.container-all{
+    width: 100%;
+    max-width: 1000px; /*Ancho del recuadro blanco */
+    margin: auto;
+    padding: 60px; /*margen del recuadro donde viene la imagen y los parrafos , etc..*/
+    background: white; /*color de fondo del recuadro */
+    margin-top: 80px; /*margen lado arriba de la pagina*/
+    border-top: 5px solid rgb(129, 67, 67); /*Lado del borde: arriba del recuadro + Tamaño del borde + tipo de borde: solid + color*/
+}
+
+.title{
+    
+    font-size: 28px;/*tamaño del titulo*/
+    margin-bottom: 10px; /*margen abajo del titulo*/
+}
+
+.sub-title{
+ font-size: 30px;/*tamaño del subtitulo, el subtitulo:Jurasic Park*/
+ margin-top: 25px;/*margen arriba del subtitulo*/
+ margin-bottom: 20px;/*margen abajo del subtitulo*/
+}
+
+.container-all img{
+    
+    width: 250px; /*el width = ancho cambia el ancho de la imagen */
+    float: left; /* el float: left se uso para que la imagen este a la izquierda y los parrados a la derecha*/
+    margin-right: 35px; /* margen lado derecho de la imagen*/
+    margin-bottom: 60px;/* margen lado de abajo de la imagen*/
+    margin-top: 60px; /*margen lado de arriba de la imagen*/
+}
+
+.container-all p{
+    font-size: 18 px;
+    font-weight: 300;
+}
+
+.container-all hr{
+    margin-top: 25px;
+    margin-bottom: 20px;
+    
+}
+
+.Pelicula{
+    margin-bottom: 50px;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #d32323;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 30%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+      display: block;
+      float: none;
+  }
+  .cancelbtn {
+      width: 100%;
+  }
+}
