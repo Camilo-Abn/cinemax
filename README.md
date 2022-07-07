@@ -7,5 +7,18 @@ Equipo:
 - Juan Bustos
 - Paul Céspedes
 - Margot Canaviri
-- Juan Perez
+- Juan Pérez
 - Camilo Valenzuela
+
+TO-DO
+
+- [X] Visualización cartelera
+- [X] Visualización pelicula
+- [ ] Comprar ticket
+- [ ] Generar QR del ticket
+- [X] Crear funciones
+- [X] Eliminar funciones
+- [ ] Editar funciones
+- [ ] Crear empleado
+- [ ] Eliminar empleado
+- [ ] Editar empleado
