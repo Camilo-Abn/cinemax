@@ -9,7 +9,7 @@ Equipo:
 - Margot Canaviri
 - Juan Pérez
 - Camilo Valenzuela
-- oscar
+
 
 TO-DO
 
