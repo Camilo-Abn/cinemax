@@ -44,27 +44,29 @@ class Peliculas {
     {
         $this->db->connect();
         $sql = "DELETE FROM peliculas WHERE id = $id";
-        $result = mysqli_query($this->db->conn, $sql);
-        $this->db->disconnect();
-        return $result;
+        $this->Ejecutar($sql, 1);
     }
 
-    function cambiar($id, $portada, $titulo, $director, $reparto, $sinopsis, $duracion, $fechas, $precio)
+    function editarConPortada($id, $portada, $titulo, $director, $reparto, $sinopsis, $duracion, $fechas, $precio)
     {
-        $this->db->connect();
-        $sql = "UPDATE peliculas SET portada = '$portada', titulo = '$titulo', director = '$director', reparto = '$reparto', sinopsis = '$sinopsis', duracion = '$duracion', fechas = '$fechas', precio = '$precio' WHERE id = $id";
-        $result = mysqli_query($this->db->conn, $sql);
-        $this->db->disconnect();
-        return $result;
+        $sql = "UPDATE peliculas 
+                SET portada = '$portada', titulo = '$titulo', director = '$director', reparto = '$reparto', sinopsis = '$sinopsis', duracion = '$duracion', fechas = '$fechas', precio = '$precio' 
+                WHERE id = $id";
+        $this->Ejecutar($sql, 1);
+    }
+
+    function editarSinPortada($id, $titulo, $director, $reparto, $sinopsis, $duracion, $fechas, $precio)
+    {
+        $sql = "UPDATE peliculas 
+                SET titulo = '$titulo', director = '$director', reparto = '$reparto', sinopsis = '$sinopsis', duracion = '$duracion', fechas = '$fechas', precio = '$precio' 
+                WHERE id = $id";
+        $this->Ejecutar($sql, 1);
     }
 
     function agregar($portada, $titulo, $director, $reparto, $sinopsis, $duracion, $fechas, $precio, $asientos)
     {
-        $this->db->connect();
         $sql = "INSERT into peliculas (portada, titulo, director, reparto, sinopsis, duracion, fechas, precio, asientos) 
                 VALUES ('$portada', '$titulo', '$director', '$reparto', '$sinopsis', '$duracion', '$fechas', '$precio', '$asientos')";
-        $result = mysqli_query($this->db->conn, $sql);
-        $this->db->disconnect();
-        return $result;
+        $this->Ejecutar($sql, 1);
     }
 }

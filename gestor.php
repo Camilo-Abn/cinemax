@@ -21,6 +21,8 @@ $peliculas = new Peliculas();
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <!-- Font Awesome -->
         <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.css">
+        <!-- SweetAlert2 -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script type="text/javascript" src="gestor.js"></script>
         <meta name="viewport" content="width=device-width,
         user-scalable=no, initial-scale=1.0, maximum-scale=1.0,
@@ -28,8 +30,9 @@ $peliculas = new Peliculas();
     </head>
 
     <body>
-        <?php include 'eliminar.php'; ?>
-        <?php include 'agregar.php'; ?>
+        <?php include 'eliminar.php';
+         include 'agregar.php';
+         include 'editar.php'; ?>
         <div>
             <button onclick="window.location.href = 'index.php'" class='salir' style="width:auto;">SALIR</button>
         </div>
@@ -49,7 +52,7 @@ $peliculas = new Peliculas();
                     </tr>
                 </thead>
             </table>
-            <button type="button" data-toggle="modal" data-target="#anadir" class="btn btn-secondary">Añadir</button>
+            <button type="button" data-toggle="modal" data-target="#modal_agregarPelicula" class="btn btn-secondary">Añadir</button>
         </div>
         <script> init(); </script>
     </body>
