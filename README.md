@@ -10,6 +10,7 @@ Equipo:
 - Juan Pérez
 - Camilo Valenzuela
 
+
 TO-DO
 
 - [X] Visualización cartelera
