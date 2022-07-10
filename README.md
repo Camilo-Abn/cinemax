@@ -15,11 +15,11 @@ TO-DO
 
 - [X] Visualización cartelera
 - [X] Visualización pelicula
-- [ ] Comprar ticket
-- [ ] Generar QR del ticket
+- [X] Comprar ticket
+- [X] Generar QR del ticket
 - [X] Crear funciones
 - [X] Eliminar funciones
-- [ ] Editar funciones
-- [ ] Crear empleado
+- [X] Editar funciones
+- [X] Crear empleado
 - [ ] Eliminar empleado
 - [ ] Editar empleado
