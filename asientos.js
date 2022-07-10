@@ -37,7 +37,7 @@ $(document).ready(function (){
             if (result.isConfirmed) {
                 Swal.fire({
                     title: 'Pago',
-                    html: '<input id="swal-input1" class="swal2-input" placeholder=Rut><br>'+
+                    html: '<input id="swal-input1" class="swal2-input" placeholder=Nombre><br>'+
                     '<input id="swal-input2" class="swal2-input" placeholder=Correo><br>'+
                     '<b>Datos de transferencia:</b><br>'+
                     'Banco: Banco Estado<br>'+
@@ -48,24 +48,58 @@ $(document).ready(function (){
                     confirmButtonText: 'Confirmar pago',
                     showLoaderOnConfirm: true,
                     preConfirm: () => {
-                        return true;
+                        const nombre = Swal.getPopup().querySelector('#swal-input1').value;
+                        const email = Swal.getPopup().querySelector('#swal-input2').value;
+                        if (!nombre || !email) {
+                            Swal.showValidationMessage(
+                                `Ingrese los datos requeridos`
+                            )
+                        }
+                        return {nombre: nombre, email: email};
                     },
-                  }).then((result) => {
-                    if (result.isConfirmed) {
-                        const codigo = generarCodigo(asientos)
-                        Swal.fire({
-                        title: 'Compra realizada',
-                        html: 'El codigo que verifica su compra es: <b>'+codigo+'</b><hr><div id="qrcode"></div><hr>',
-                        }).then(function(){
-                            window.location = "index.php";
-                        })
-                        new QRCode(document.getElementById("qrcode"), codigo);
-                        actualizarAsientos();
-                    }
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            const codigo = generarCodigo(asientos)
+                            
+                            Swal.fire({
+                            title: 'Compra realizada',
+                            html: 'El codigo que verifica su compra es: <b>'+codigo
+                            +'</b><hr><div id="qrcode"></div><hr>'
+                            +'Recibirá un correo con los detalles de su compra',
+                            }).then(function(){
+                                window.location = "index.php";
+
+                            })
+                            generarQr(codigo);
+                            enviarEmail(codigo, result.value.nombre, result.value.email);
+                            
+                            actualizarAsientos();
+                        }
                   })
                 }
           })
-    }); 
+    });
+    
+    function generarQr(codigo){
+        const qrdoc = document.getElementById("qrcode");
+        qr = new QRCode(qrdoc, codigo);
+        return qr;
+        }
+        
+    function enviarEmail(id_compra, nombre, correo){
+        $.ajax({
+            url: 'mail.php',
+            type: 'POST',
+            data: {
+                nombre: nombre,
+                correo: correo,
+                id_compra: id_compra,
+            },
+            success: function(response){
+                console.log(response);
+            }
+        });
+    }
     function generarCodigo(idAsientos){
         var codigo = idPelicula+"-";
         for (var i = 0; i < idAsientos.length; i++) {
