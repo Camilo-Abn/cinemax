@@ -158,5 +158,16 @@
             }
             
             break;
+
+        case 'actualizarAsientos':
+            if(isset($_POST['id'])){
+                $asientos = implode(",", $_POST['asientos']);
+                $peli->actualizarAsientos($_POST['id'], $asientos);
+                echo 1;
+            }
+            else{
+                echo 0;
+            }
+            break;
     }
 ?>

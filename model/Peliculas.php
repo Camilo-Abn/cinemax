@@ -69,4 +69,12 @@ class Peliculas {
                 VALUES ('$portada', '$titulo', '$director', '$reparto', '$sinopsis', '$duracion', '$fechas', '$precio', '$asientos')";
         $this->Ejecutar($sql, 1);
     }
+
+    function actualizarAsientos($id, $asientos)
+    {
+        $sql = "UPDATE peliculas 
+                SET asientos = '$asientos' 
+                WHERE id = $id";
+        $this->Ejecutar($sql, 1);
+    }
 }
