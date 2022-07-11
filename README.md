@@ -21,5 +21,5 @@ TO-DO
 - [X] Eliminar funciones
 - [X] Editar funciones
 - [X] Crear empleado
-- [ ] Eliminar empleado
-- [ ] Editar empleado
+- [X] Eliminar empleado
+- [X] Editar empleado
