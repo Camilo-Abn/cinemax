@@ -62,7 +62,7 @@ include_once('database.php');
             <?php foreach ($peliculas as $pelicula) { ?>
                 <div class="Pelicula">
                     <div class="Portada">
-                        <img src=<?php echo htmlspecialchars($pelicula['portada']); ?> alt="">
+                        <img src="<?php echo htmlspecialchars($pelicula['portada']); ?>" alt="">
                     </div>
                     <div>
                         <h2 class="sub-title"><?php echo htmlspecialchars($pelicula['titulo']); ?></h2>
