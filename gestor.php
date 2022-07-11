@@ -35,6 +35,7 @@ $peliculas = new Peliculas();
          include 'editar.php'; ?>
         <div>
             <button onclick="window.location.href = 'index.php'" class='salir' style="width:auto;">SALIR</button>
+            <button onclick="window.location.href = 'signup.php'" class='salir' style="width: auto;float: right;">REGISTRAR</button>
         </div>
 
         <div class="container-all">
