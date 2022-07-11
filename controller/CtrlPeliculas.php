@@ -127,6 +127,7 @@
                                     $img_path = "img/".$img_name;
                                     
                                     $peli->editarConPortada($id, $img_path, $titulo, $director, $reparto, $sinopsis, $duracion, $fechas, $precio);
+                                    move_uploaded_file($tmp_name, '../'.$img_path);
                                     echo 1;
                                 } else {
                                     echo "El archivo no es una imagen";
