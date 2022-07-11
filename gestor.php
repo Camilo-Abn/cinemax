@@ -42,8 +42,8 @@ $peliculas = new Peliculas();
         
         <h1>Gestión de funciones</h1>
         <div class="container">
-            <table id="lista_peliculas" class="table table-hover table-bordered table-red">
-                <thead>
+            <table id="lista_peliculas" class="table table-hover table-bordered table-striped">
+                <thead class="thead-dark">
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Titulo</th>
