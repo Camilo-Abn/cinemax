@@ -30,10 +30,7 @@
                             </div>
                         </tr>
                         <tr>
-                            <label class="formulario__label">ID</label>
-                            <div class="formulario__grupo-input">
-                                <input class="formulario__input" type="int" name="id" id="id" value="<?= $id ?>">
-                            </div>
+                            <label class="formulario__label">ID: <?= $id ?></label>
                         </tr>
                     </div>
                     <tr>
