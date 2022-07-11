@@ -39,7 +39,7 @@ include_once('database.php');
             <form class="modal-content animate" id="form_signin" method="post">
 
                 <div class="container">
-                    <label for="uname"><b>Usuario</b></label>
+                    <label for="uname"><b>Correo</b></label>
                     <input type="email" placeholder="correo@ejemplo.com" name="email" id='email' required>
 
                     <label for="psw"><b>Contraseña</b></label>
