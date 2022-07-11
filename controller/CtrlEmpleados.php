@@ -2,11 +2,10 @@
 include_once('../database.php');
 $message = '';
 session_start();
-
 switch($_REQUEST["op"]){
     case 'agregarEmpleado':
         if (!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['password2'])) {
-            $sql = "INSERT INTO users (email, password) VALUES (:email, :password)";
+            $sql = "INSERT INTO users (email, password) VALUES (:email,:password)";
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(':email', $_POST['email']);
             $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
@@ -41,6 +40,19 @@ switch($_REQUEST["op"]){
             }
         }
         break;
-
+    case 'eliminarEmpleado':
+        if (!empty($_POST['id'])) {
+            $sql = "DELETE FROM users WHERE id = :id";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':id', $_POST['id']);
+            if ($stmt->execute()) {
+                $message = 'El empleado ha sido eliminado satisfactoriamente.';
+                echo 1;
+            } else {
+                $message = 'Ha ocurrido un error, verifique bien los datos ingresados.';
+                echo 0;
+            }
+        }
+        break;
     }
 ?>
