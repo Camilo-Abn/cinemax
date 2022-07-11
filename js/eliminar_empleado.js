@@ -1,8 +1,12 @@
 $(document).ready(function(){
-    $('#form_eliminar').on('submit',function(e){
+    
+    $('form').on('submit',function(e){
         e.preventDefault();
-        id = document.getElementById('id').value;
-        email = document.getElementById('email').value;
+        var form = $(this).attr('id');
+        form = document.getElementById(form);
+        input = form.getElementsByTagName('input')
+        id = input.id.value;
+        email = input.email.value;
         Swal.fire({
             title: '¿Estás seguro de querer eliminar el empleado?',
             showDenyButton: true,
@@ -32,7 +36,7 @@ $(document).ready(function(){
                                 }
                             });
                         } else {
-                            Swal.fire('No se ha eliminado el empleado', '', 'info')
+                            Swal.fire('No se ha eliminado el empleado', '', 'error')
                         }
                     }
                 })

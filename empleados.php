@@ -48,12 +48,12 @@ include_once('database.php');
                                     <td><?php echo $mostrar['1'] ?></td> <!-- EMAIL -->
 
                                     <td>
-                                        <form id="form_eliminar">
+                                        <form id="form_eliminar<?php echo $mostrar['0'] ?>">
                                         <a href="editar_empleado.php?
                                             id=<?php echo $mostrar['0'] ?> &
                                             email=<?php echo $mostrar['1'] ?>" class="btn btn-info">Editar</a>
-                                            <input type="hidden" id="id" value="<?php echo $mostrar['0'] ?>">
-                                            <input type="hidden" id="email" value="<?php echo $mostrar['1'] ?>">
+                                            <input id="id" type="hidden" value="<?php echo $mostrar['0'] ?>">
+                                            <input id="email" type="hidden" value="<?php echo $mostrar['1'] ?>">
                                             <button type="submit" class="btn btn-danger">Eliminar</button>
                                         </form>
                                     </td>
