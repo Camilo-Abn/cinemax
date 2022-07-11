@@ -21,22 +21,26 @@ switch($_REQUEST["op"]){
         }
         break;
     case 'login':
-        if (isset($_SESSION['user_id'])) {
-            if (!empty($_POST['email']) && !empty($_POST['password'])) {
-                $records = $conn->prepare('SELECT id, email, password FROM users WHERE email = :email');
-                $records->bindParam(':email', $_POST['email']);
-                $records->execute();
-                $results = $records->fetch(PDO::FETCH_ASSOC);
-        
-                if($results){
-                    if (password_verify($_POST['password'], $results['password'])) {
-                        $_SESSION['user_id'] = $results['id'];
-                        echo 1;
-                    } else {
-                        echo 0;
-                    }
+        if (!empty($_POST['email']) && !empty($_POST['password'])) {
+            $sql = "SELECT * FROM users WHERE email = :email";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':email', $_POST['email']);
+            $stmt->execute();
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            if ($user) {
+                if (password_verify($_POST['password'], $user['password'])) {
+                    $_SESSION['user'] = $user;
+                    echo 1;
+                } else {
+                    $message = 'La contraseña es incorrecta.';
+                    echo 0;
                 }
+            } else {
+                $message = 'El usuario no existe.';
+                echo 0;
             }
         }
+        break;
+
     }
 ?>

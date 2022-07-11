@@ -15,6 +15,7 @@ $(document).ready(function(){
                 if(response == 1){
                     window.location.replace('gestor.php');
                 }else{
+                    console.log(response);
                     Swal.fire({
                         icon: 'error', 
                         title: 'Oops...', 
